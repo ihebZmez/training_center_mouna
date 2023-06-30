@@ -6,31 +6,31 @@ const User = g.model('User', {
   avatarUrl: g.url(),
   description: g.string().optional(),
   address: g.string().length({min: 5, max: 60}),
-  Training_Class: g.relation(() => Training_Class).list().optional(),
+  TrainingClass: g.relation(() => TrainingClass).list().optional(),
 })
 
-const Training_Class = g.model('Training_Class', {
+const TrainingClass = g.model('TrainingClass', {
   title: g.string().length({min: 5, max: 60}),
   description: g.string().length({min: 10, max: 200}),
-  date_creation: g.datetime(),
-  date_update: g.datetime(),
-  date_delete: g.datetime(),
+  dateCreation: g.datetime(),
+  dateUpdate: g.datetime(),
+  dateDelete: g.datetime(),
   status: g.boolean(),
   image: g.url(),
   category: g.string().search(),
   createdBy: g.relation(() => User),
 })
 /*
-enum Qualification_Type {
+enum QualificationType {
   gold,
   silver,
   bronze
 }
 
-const Qualification_Class = g.model('Qualification_Class', {
+const QualificationClass = g.model('QualificationClass', {
   title: g.string().length({min: 5, max: 60}),
   description: g.string().length({min: 10, max: 200}),
-  //qualification_Type: Qualification_Type,
+  //qualificationType: QualificationType,
 })*/
 
 
