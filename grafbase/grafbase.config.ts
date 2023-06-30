@@ -6,10 +6,7 @@ const User = g.model('User', {
   avatarUrl: g.url(),
   description: g.string().optional(),
   address: g.string().length({min: 5, max: 60}),
-  role: g.relation(),
   Training_Class: g.relation(() => Training_Class).list().optional(),
-  quizz: g.relation(),
-
 })
 
 const Training_Class = g.model('Training_Class', {
@@ -23,7 +20,7 @@ const Training_Class = g.model('Training_Class', {
   category: g.string().search(),
   createdBy: g.relation(() => User),
 })
-
+/*
 enum Qualification_Type {
   gold,
   silver,
@@ -34,7 +31,7 @@ const Qualification_Class = g.model('Qualification_Class', {
   title: g.string().length({min: 5, max: 60}),
   description: g.string().length({min: 10, max: 200}),
   //qualification_Type: Qualification_Type,
-})
+})*/
 
 
 export default config({
